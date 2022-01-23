@@ -1,7 +1,11 @@
 import React from 'react';
 import { Navbar, Container, Nav, NavDropdown, Carousel} from 'react-bootstrap';
 import './navbar.css';
+import data from './description.json';
+const pathPrefix = "./images/16to9/";
 
+// Render the Nav bar 
+// (The links does not work for now, need to learn about how to redirect pages)
 class HeaderMenu extends React.Component {
     render() {
         return(
@@ -29,35 +33,47 @@ class HeaderMenu extends React.Component {
     }
 }
 
-class HomeCarousel extends React.Component {
-    render () {
-        return (
-            <Carousel>
-                <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src="./images/kylinZhang.jpg"
-                    alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                
-                <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src="./images/Home_HugMoon_crop.JPG"
-                    alt="Second slide"
-                    />
+class CarouselImage extends React.Component{
+    constructor(props) {
+        super(props);
+    }
+    render(){
+        return(
+            <Carousel.Item>
+                <img
+                className="d-block w-100"
+                src={pathPrefix.concat(this.props.path)}
+                alt="Second slide"
+                />
                 <Carousel.Caption>
-                    <h3>Second slide label</h3>
+                    <h3>pathPrefix.concat(this.props.path)</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </Carousel.Caption>
-                </Carousel.Item>
+            </Carousel.Item>
+        )
+    }
+}
+
+
+class HomeCarousel extends React.Component {
+    render() {
+        return (
+            <Carousel>
+                {Object.entries(data).map(([_, value])=>(
+                    <Carousel.Item>
+                        <img
+                        className="d-block w-100"
+                        src={pathPrefix.concat(value.name)}
+                        alt="Second slide"
+                        />
+                        <Carousel.Caption>
+                            <p class="description">{value.title}</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                ))}
             </Carousel>)
     }
 }
+
 
 export {HeaderMenu, HomeCarousel};

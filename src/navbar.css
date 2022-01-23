@@ -2,3 +2,7 @@
     width: 2em;
     height: 2em;
 }
+.description {
+    font-size: small;
+    color: #A9A9A9;
+}
