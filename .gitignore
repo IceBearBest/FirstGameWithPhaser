@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # not used resources
-./public/images/notused/*
+/public/images/notused/*
