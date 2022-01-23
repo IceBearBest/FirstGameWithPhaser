@@ -12,7 +12,7 @@ class HeaderMenu extends React.Component {
             <Navbar bg="light" expand="lg">
                 <Container>
                     <Navbar.Brand href="#home">
-                    <img src='./svg/half-moon-moon-svgrepo-com.svg' id="logo"/>
+                    <img src='./svg/half-moon-moon-svgrepo-com.svg' id="logo" alt="half-moon"/>
                         肖宇梁 Rainco </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -33,26 +33,23 @@ class HeaderMenu extends React.Component {
     }
 }
 
-class CarouselImage extends React.Component{
-    constructor(props) {
-        super(props);
-    }
-    render(){
-        return(
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src={pathPrefix.concat(this.props.path)}
-                alt="Second slide"
-                />
-                <Carousel.Caption>
-                    <h3>pathPrefix.concat(this.props.path)</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-        )
-    }
-}
+// class CarouselImage extends React.Component{
+//     render(){
+//         return(
+//             <Carousel.Item>
+//                 <img
+//                 className="d-block w-100"
+//                 src={pathPrefix.concat(this.props.path)}
+//                 alt="Second slide"
+//                 />
+//                 <Carousel.Caption>
+//                     <h3>pathPrefix.concat(this.props.path)</h3>
+//                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+//                 </Carousel.Caption>
+//             </Carousel.Item>
+//         )
+//     }
+// }
 
 
 class HomeCarousel extends React.Component {
