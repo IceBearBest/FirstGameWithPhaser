@@ -1,12 +1,15 @@
 import React from 'react';
-import {HeaderMenu, HomeCarousel} from './navbar';
+// import {HeaderMenu, HomeCarousel} from './navbar';
+import './main.css';
 
 class MainTemplate extends React.Component {
     render () {
         return (
             <div id="MainTemplate">
-            <HeaderMenu/>
-            <HomeCarousel/>
+            {/* <HeaderMenu/>
+            <HomeCarousel/> */}
+             <canvas id="canvas-test"></canvas>
+             <button id="game-stop">Stop</button>       
             </div>
         )
     }

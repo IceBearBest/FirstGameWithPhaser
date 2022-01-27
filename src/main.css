@@ -1,0 +1,10 @@
+#canvas-test {
+    background-color: black;
+}
+
+#game-stop {
+    color:red;
+    position:absolute;
+    left: 30%;
+    top:30%;
+}
