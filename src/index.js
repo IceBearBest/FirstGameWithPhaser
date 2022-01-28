@@ -4,7 +4,7 @@ import MainTemplate from './main';
 import './index.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Game } from './game';
+import { Game } from './platform';
 
 
 ReactDOM.render(
@@ -13,7 +13,7 @@ ReactDOM.render(
 );
 
 let myGame = new Game('canvas-test');
-myGame.setup();
+myGame.setup(15);
 myGame.loop();
 let button = document.getElementById('game-stop');
 let gameState=false;
@@ -22,9 +22,10 @@ button.onclick = function(){
     if(gameState){
         clearInterval(id);
         gameState = false;
+        this.innerText = 'START'
     } else{
         id = setInterval(myGame.loop, 22);
-        console.log('started');
         gameState=true;
+        this.innerText = 'STOP'
     }
 }
