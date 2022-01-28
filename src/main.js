@@ -10,7 +10,6 @@ class MainTemplate extends React.Component {
             <HomeCarousel/> */}
              <canvas id="canvas-test"></canvas>
              <button id="game-stop">START</button>   
-             <img src="./svg/cat.svg"/>   
             </div>
         )
     }
