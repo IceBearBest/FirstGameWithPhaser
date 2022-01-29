@@ -83,8 +83,8 @@ class CatLadder extends React.Component{
             this.keys.left = true;
             
         }
-        // 38: up arrow
-        if (e.keyCode === 38) {
+        // 38: up arrow or space for jump
+        if (e.keyCode === 38 || e.keyCode === 32) {
             if (this.player.jump === false) {
                 this.audio_jump.play();
                 this.player.y_v = -10; // jump up with initial velocity = -10
@@ -95,7 +95,7 @@ class CatLadder extends React.Component{
         if (e.keyCode === 39) {
             this.keys.right = true;
         }
-    }
+    } 
     
     // record the key state when the key is released
     keyup(e) {
@@ -103,8 +103,8 @@ class CatLadder extends React.Component{
         if (e.keyCode === 37) {
             this.keys.left = false;
         }
-        // 38: up arrow
-        if (e.keyCode === 38) {
+        // 38: up arrow or space for jump
+        if (e.keyCode === 38 || e.keyCode === 32) {
             if (this.player.y_v < -2) {
                 this.player.y_v = -3; // decrease to a small velocity up
             }
