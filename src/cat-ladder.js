@@ -70,7 +70,6 @@ class CatLadder extends React.Component{
     render(){
         return(
         <div id="catladder">
-        <h1>This is a game of a cat jumping around ladders</h1>
         <canvas id="canvas-catladder" ref={this.canvasRef}></canvas>
         </div>
         )
