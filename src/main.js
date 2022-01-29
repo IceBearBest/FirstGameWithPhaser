@@ -1,18 +1,34 @@
 import React from 'react';
-// import {HeaderMenu, HomeCarousel} from './navbar';
+import {HeaderMenu, HomeCarousel} from './navbar';
 import './main.css';
+import {CatJump} from "./cat-jump";
+import { CatLadder } from './cat-ladder';
 
-class MainTemplate extends React.Component {
+class ResourceHome extends React.Component {
     render () {
         return (
-            <div id="MainTemplate">
-            {/* <HeaderMenu/>
-            <HomeCarousel/> */}
-             <canvas id="canvas-test"></canvas>
-             <button id="game-stop">START</button>   
+            <div id="MainWindow">
+            <HeaderMenu/>
+            <HomeCarousel/>
             </div>
         )
     }
 }
 
-export default MainTemplate;
+class CatLadderHome extends React.Component {
+    render () {
+        return (
+            <CatLadder></CatLadder>
+        )
+    }
+}
+
+class CatJumpHome extends React.Component {
+    render() {
+        return (
+            <CatJump></CatJump>
+        )
+    }
+}
+
+export {ResourceHome, CatLadderHome, CatJumpHome};
