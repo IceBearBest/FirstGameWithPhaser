@@ -11,7 +11,7 @@ class Ladder{
             this.platforms.push(
                 {
                     x: 7*i*unit_x + 50*x_offset,
-                    y: 8*unit_y + 5*i*unit_y+50*y_offset,
+                    y: 18*unit_y + 5*i*unit_y+50*y_offset,
                     width: 7*unit_x,
                     height: 0.5*unit_x,
                 }

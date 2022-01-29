@@ -14,18 +14,19 @@ class CatLadder extends React.Component{
         };
         this.gravity = 0.6;
         this.friction = 0.7;
+        this.audio_jump = new Audio('../.././sound/jump2.wav');
     }
 
     componentDidMount(){
         this.ctx = this.canvasRef.current.getContext('2d');
         this.rescale({x:2,y:1});
+        this.ladder = new Ladder(this.ctx, 15, this.unit, this.unit_x, this.unit_y, this.x_offset, this.y_offset);
         this.player = new Player(this.ctx, '../.././svg/cat2.svg', 
             8*(this.unit_x+this.x_offset),
             5*(this.unit_y+this.y_offset),
             0,0,true,
             10*this.unit,
             8*this.unit);
-        this.ladder = new Ladder(this.ctx, 15, this.unit, this.unit_x, this.unit_y, this.x_offset, this.y_offset);
         this.renderCanvas();
         document.addEventListener("keydown",this.keydown.bind(this));
         document.addEventListener("keyup", this.keyup.bind(this));    
@@ -85,6 +86,7 @@ class CatLadder extends React.Component{
         // 38: up arrow
         if (e.keyCode === 38) {
             if (this.player.jump === false) {
+                this.audio_jump.play();
                 this.player.y_v = -10; // jump up with initial velocity = -10
             }
         }
