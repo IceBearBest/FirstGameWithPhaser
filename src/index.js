@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ResourceHome, CatLadderHome, CatJumpHome}from './main';
@@ -16,21 +17,3 @@ ReactDOM.render(
     </Router>,
     document.getElementById('root')
 );
-
-// let myGame = new Game('canvas-test');
-// myGame.setup(15);
-// myGame.loop();
-// let button = document.getElementById('game-stop');
-// let gameState=false;
-// let id;
-// button.onclick = function(){
-//     if(gameState){
-//         clearInterval(id);
-//         gameState = false;
-//         this.innerText = 'START'
-//     } else{
-//         id = setInterval(myGame.loop, 22);
-//         gameState=true;
-//         this.innerText = 'STOP'
-//     }
-// }
