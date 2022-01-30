@@ -14,14 +14,14 @@ class CatLadder extends React.Component{
         };
         this.gravity = 0.6;
         this.friction = 0.7;
-        this.audio_jump = new Audio('../.././sound/jump2.wav');
+        this.audio_jump = new Audio('../sound/jump2.wav');
     }
 
     componentDidMount(){
         this.ctx = this.canvasRef.current.getContext('2d');
         this.rescale({x:2,y:1});
         this.ladder = new Ladder(this.ctx, 15, this.unit, this.unit_x, this.unit_y, this.x_offset, this.y_offset);
-        this.player = new Player(this.ctx, '../.././svg/cat2.svg', 
+        this.player = new Player(this.ctx, '../svg/cat2.svg', 
             8*(this.unit_x+this.x_offset),
             5*(this.unit_y+this.y_offset),
             0,0,true,
