@@ -1,4 +1,3 @@
-import Phaser from 'phaser';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ResourceHome, CatLadderHome, CatJumpHome}from './main';
